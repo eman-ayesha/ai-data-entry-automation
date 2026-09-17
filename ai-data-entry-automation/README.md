@@ -1,14 +1,25 @@
-# AI-Assisted Data Entry Automation
+# AI-Assisted Data Entry & Data Cleaning Automation
 
-**Tools:** n8n · Google Sheets · Groq · JavaScript
+**Tools:** n8n · Google Sheets · Groq · JavaScript · Python · Pandas · NumPy
 
 ## Overview
 
-An automation workflow designed to convert structured or semi-structured user data into standardized records and automatically append them to Google Sheets.
+This project demonstrates practical data entry, data cleaning, data validation, and workflow automation skills.
 
-## Workflow
+It contains two complementary components:
 
-```
+1. **AI-Assisted Data Entry Automation** – Uses n8n, an AI Agent, JavaScript, and Google Sheets to structure and automate multi-record data entry.
+2. **Data Cleaning & Standardization** – Uses Python, Pandas, and NumPy to clean, standardize, validate, and prepare messy client data for further processing.
+
+The project is designed to demonstrate accuracy, consistency, organization, and automation of repetitive data-management tasks.
+
+---
+
+## 1. AI-Assisted Data Entry Automation
+
+### Workflow
+
+```text
 User Data
     ↓
 AI Agent
@@ -18,53 +29,3 @@ Data Structuring
 JavaScript Transformation
     ↓
 Google Sheets
-```
-
-## Features
-
-- AI-assisted data structuring
-- Multi-row data processing
-- Automatic field mapping
-- Google Sheets integration
-- JSON parsing
-- JavaScript data transformation
-- Automated spreadsheet insertion
-
-## Example Fields
-
-| Name        | Phone        | City      | Area       | Status   |
-|-------------|--------------|-----------|------------|----------|
-| Ali Khan    | 0300-1234567 | Lahore    | Johar Town | Active   |
-| Sara Ahmed  | 0312-7654321 | Lahore    | DHA        | Active   |
-| Usman Malik | 0321-9876543 | Islamabad | F-8        | Inactive |
-
-## Skills Demonstrated
-
-`Data Entry` `Data Cleaning` `Google Sheets` `n8n` `JavaScript` `JSON` `Workflow Automation` `AI`
-
-## Repository Structure
-
-```
-ai-data-entry-automation/
-│
-├── README.md
-│
-├── n8n/
-│   └── data-entry-agent.json
-│
-├── sample-data/
-│   └── sample-donors.csv
-│
-└── screenshots/
-    ├── workflow.png
-    ├── ai-agent.png
-    └── google-sheets.png
-```
-
-## Screenshots
-
-_Add screenshots of the n8n workflow, the AI agent output, and the Google Sheets result here._
-
-![Workflow](screenshots/workflow.png)
-![AI Agent](screenshots/ai-agent.png)
-![Google Sheets](screenshots/google-sheets.png)
