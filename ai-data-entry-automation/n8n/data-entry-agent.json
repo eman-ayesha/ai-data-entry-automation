@@ -1,0 +1,266 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "17BigyKYG9Ki-Ai609yWK4eBocrjeF0-inQ8-31wVdf8",
+          "mode": "list",
+          "cachedResultName": "BloodNet_Donors",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/17BigyKYG9Ki-Ai609yWK4eBocrjeF0-inQ8-31wVdf8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/17BigyKYG9Ki-Ai609yWK4eBocrjeF0-inQ8-31wVdf8/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Name",
+              "displayName": "Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "BloodGroup",
+              "displayName": "BloodGroup",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Phone",
+              "displayName": "Phone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "City",
+              "displayName": "City",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Area",
+              "displayName": "Area",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "LastDonation",
+              "displayName": "LastDonation",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "output",
+              "displayName": "output",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Blood Group",
+              "displayName": "Blood Group",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Last Donation",
+              "displayName": "Last Donation",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "name": "Append to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        2304,
+        80
+      ],
+      "id": "ec15581e-f129-4413-a3c6-99a817933f19",
+      "retryOnFail": true,
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "qim3fp2fHhrp0PRm",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a data-entry assistant.\n\nYour job is to take the data provided by the user and structure it for Google Sheets.\n\nFor this test, use the following 3 records:\n\n[\n  {\n    \"Name\": \"Ali Khan\",\n    \"Phone\": \"0300-1234567\",\n    \"City\": \"Lahore\",\n    \"Area\": \"Johar Town\",\n    \"Status\": \"Active\"\n  },\n  {\n    \"Name\": \"Sara Ahmed\",\n    \"Phone\": \"0312-7654321\",\n    \"City\": \"Lahore\",\n    \"Area\": \"DHA\",\n    \"Status\": \"Active\"\n  },\n  {\n    \"Name\": \"Usman Malik\",\n    \"Phone\": \"0321-9876543\",\n    \"City\": \"Islamabad\",\n    \"Area\": \"F-8\",\n    \"Status\": \"Inactive\"\n  }\n]\n\nReturn ONLY valid JSON.\nDo not explain anything.",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        2000,
+        -208
+      ],
+      "id": "0749b716-de55-420d-b69c-384a5d3b9950",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-oss-20b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        2016,
+        176
+      ],
+      "id": "ff006af5-8e0b-4b44-9f3b-193788f46e97",
+      "name": "Groq Chat Model",
+      "notesInFlow": false,
+      "credentials": {
+        "groqApi": {
+          "id": "WiWiMMgTBqmmA9Mq",
+          "name": "Groq account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        1632,
+        -64
+      ],
+      "id": "f073cdcc-a6f8-44fd-82d1-ac8e952a378a",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "jsCode": "let data = JSON.parse($json.output);\n\n// If the AI returned JSON as a string inside the parsed result\nif (typeof data === 'string') {\n  data = JSON.parse(data);\n}\n\n// Handle either:\n// 1. An array directly\n// 2. An object containing { values: [...] }\nconst values = Array.isArray(data)\n  ? data\n  : data.values;\n\nconst headers = values[0];\n\nreturn values.slice(1).map(row => {\n  const item = {};\n\n  headers.forEach((header, index) => {\n    item[header] = row[index];\n  });\n\n  return {\n    json: item\n  };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2352,
+        -208
+      ],
+      "id": "6ee789d2-0c54-41c7-83c5-8836946f1cf0",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "connections": {
+    "Append to Google Sheets": {
+      "main": [
+        []
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Append to Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "969403645ba673fc3b12279f0d3a0430bc0565e8c87601d9ae1914b78aac2fc3"
+  }
+}
